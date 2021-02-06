@@ -9,7 +9,7 @@ import Foundation
 
 class UserSession {
     
-    let shared = UserSession()
+    static let shared = UserSession()
     
     var userId: Int = 0
     var token: String = ""

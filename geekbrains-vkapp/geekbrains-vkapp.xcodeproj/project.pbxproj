@@ -27,6 +27,8 @@
 		8DED03A125CF019000173690 /* AllGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DED03A025CF019000173690 /* AllGroupsController.swift */; };
 		8DED03A525CF05E400173690 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DED03A425CF05E400173690 /* NewsController.swift */; };
 		8DED03A925CF062500173690 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DED03A825CF062500173690 /* NewsCell.swift */; };
+		8DEFA0A025CF308D00315AB7 /* VKLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFA09F25CF308D00315AB7 /* VKLoginController.swift */; };
+		8DF8596D25CF415C00FA093E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF8596C25CF415C00FA093E /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		8DED03A025CF019000173690 /* AllGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsController.swift; sourceTree = "<group>"; };
 		8DED03A425CF05E400173690 /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		8DED03A825CF062500173690 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		8DEFA09F25CF308D00315AB7 /* VKLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKLoginController.swift; sourceTree = "<group>"; };
+		8DF8596C25CF415C00FA093E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 				8D8CA50525CDD75400F28A8E /* LaunchScreen.storyboard */,
 				8D8CA50825CDD75400F28A8E /* Info.plist */,
 				8DED037925CEE77D00173690 /* SessionSingletone.swift */,
+				8DEFA09F25CF308D00315AB7 /* VKLoginController.swift */,
+				8DF8596C25CF415C00FA093E /* NetworkManager.swift */,
 			);
 			path = "geekbrains-vkapp";
 			sourceTree = "<group>";
@@ -211,10 +217,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DF8596D25CF415C00FA093E /* NetworkManager.swift in Sources */,
 				8DED03A525CF05E400173690 /* NewsController.swift in Sources */,
 				8D8CA4FF25CDD75200F28A8E /* ViewController.swift in Sources */,
 				8DED039B25CF00CE00173690 /* UserGroupCell.swift in Sources */,
 				8DED038925CEEBAA00173690 /* FriendsController.swift in Sources */,
+				8DEFA0A025CF308D00315AB7 /* VKLoginController.swift in Sources */,
 				8DED039E25CF017500173690 /* AllGroupCell.swift in Sources */,
 				8D8CA4FB25CDD75200F28A8E /* AppDelegate.swift in Sources */,
 				8DED037A25CEE77D00173690 /* SessionSingletone.swift in Sources */,

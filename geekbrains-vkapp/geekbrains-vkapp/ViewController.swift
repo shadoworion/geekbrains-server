@@ -88,9 +88,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func registerButton(_ sender: Any) {
-        if let regUrl = URL(string: "https://vk.com/join") {
-            UIApplication.shared.open(regUrl)
-        }
+        dismiss(animated: true, completion: nil)
     }
 }
 

@@ -42,6 +42,9 @@ class FriendsController: UITableViewController, UISearchBarDelegate {
         friendsTable.delegate = self
         friendsTable.dataSource = self
         searchField.delegate = self
+        
+        let task = NetworkManager()
+        task.getFriends()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

@@ -17,6 +17,9 @@ class NewsController: UITableViewController {
         newsTable.delegate = self
         newsTable.dataSource = self
         newsTable.allowsSelection = false
+        
+        let task = NetworkManager()
+        task.getNews()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -28,6 +28,9 @@ class UserGroupsController: UITableViewController, UISearchBarDelegate {
         userGroupsTable.dataSource = self
         searchField.delegate = self
         
+        let task = NetworkManager()
+        task.getGroups()
+        
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
          view.addGestureRecognizer(tapGesture)
     }
