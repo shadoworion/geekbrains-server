@@ -12,9 +12,11 @@ protocol News {
     
     var title: String { get set }
     
-    var poster: UIImage? { get set }
+    var poster: URL? { get set }
     
     var likes: Int { get set }
+    
+    var isLiked: Bool { get set }
 }
 
 class Post: News {
@@ -22,19 +24,18 @@ class Post: News {
     
     var title: String
     
-    var poster: UIImage?
+    var poster: URL?
     
     var likes: Int
     
-    init(id: Int, title: String, poster: UIImage?) {
+    var isLiked: Bool = false
+    
+    init(id: Int, title: String, poster: URL?, likes: Int, isLiked: Bool) {
         self.id = id
         self.title = title
         self.poster = poster
-        self.likes = 0
-    }
-    
-    func updatePoster(poster: UIImage){
-        self.poster = poster
+        self.likes = likes
+        self.isLiked = isLiked
     }
     
     func likePost(){
@@ -46,10 +47,10 @@ class Post: News {
     }
 }
 
-let post1 = Post(id: 1, title: "Post One", poster: nil)
-let post2 = Post(id: 2, title: "Post Two", poster: nil)
-let post3 = Post(id: 3, title: "Post Three", poster: nil)
-let post4 = Post(id: 4, title: "Post Four", poster: nil)
-let post5 = Post(id: 5, title: "Post Five", poster: nil)
+let post1 = Post(id: 1, title: "Post One", poster: nil, likes: 0, isLiked: false)
+let post2 = Post(id: 2, title: "Post Two", poster: nil, likes: 0, isLiked: false)
+let post3 = Post(id: 3, title: "Post Three", poster: nil, likes: 0, isLiked: false)
+let post4 = Post(id: 4, title: "Post Four", poster: nil, likes: 0, isLiked: false)
+let post5 = Post(id: 5, title: "Post Five", poster: nil, likes: 0, isLiked: false)
 
 var newsData: [Post] = [post1, post2, post3, post4, post5]

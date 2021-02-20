@@ -12,12 +12,12 @@ class UserGroupCell: UITableViewCell {
     @IBOutlet weak var groupLabel: UILabel!
     @IBOutlet weak var groupAvatar: UIImageView!
     
-    func setData(title: String, avatar: UIImage?){
+    func setData(title: String, avatar: URL?){
         groupLabel.text = title
         if avatar == nil {
             groupAvatar.image = UIImage(systemName: "person.2.square.stack.fill")
         } else {
-            groupAvatar.image = avatar
+            groupAvatar.load(url: avatar!)
         }
     }
 }

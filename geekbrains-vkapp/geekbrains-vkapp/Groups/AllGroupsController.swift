@@ -29,18 +29,48 @@ class AllGroupsController: UITableViewController, UISearchBarDelegate {
         allGroupsTabel.dataSource = self
         searchField.delegate = self
         
+        let task = NetworkManager()
+        task.getAllGroups { (groups) in
+            if (groups.count > 0) {
+                for group in groups {
+                    allGroupData.append(Group(id: group.id, title: group.name, avatar: group.photo_50))
+                }
+            } else {
+                allGroupData.append(Group(id: 0, title: "You have no groups", avatar: nil))
+            }
+            
+            DispatchQueue.main.async {
+                self.setTableData(data: allGroupData)
+                self.tableView.reloadData()
+            }
+        }
+        
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
          view.addGestureRecognizer(tapGesture)
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if((searchField.text) != ""){
-            let filteredData = allGroupData.filter({$0.title.lowercased().contains((searchField.text?.lowercased())!)})
-            setTableData(data: filteredData)
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if (searchField.text != "") {
+            let task = NetworkManager()
+            task.findGroup(value: searchField.text) { (groups) in
+                var foundedGroups: [Group] = []
+                if (groups.count > 0) {
+                    for group in groups {
+                        foundedGroups.append(Group(id: group.id, title: group.name, avatar: group.photo_50))
+                    }
+                } else {
+                    foundedGroups.append(Group(id: 0, title: "Group not found", avatar: nil))
+                }
+                
+                DispatchQueue.main.async {
+                    self.setTableData(data: foundedGroups)
+                    self.tableView.reloadData()
+                }
+            }
         } else {
-            setTableData(data: allGroupData)
+            self.setTableData(data: allGroupData)
+            self.tableView.reloadData()
         }
-        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -29,7 +29,20 @@ class UserGroupsController: UITableViewController, UISearchBarDelegate {
         searchField.delegate = self
         
         let task = NetworkManager()
-        task.getGroups()
+        task.getGroups { (groups) in
+            if (groups.count > 0) {
+                for group in groups {
+                    groupData.append(Group(id: group.id, title: group.name, avatar: group.photo_50))
+                }
+            } else {
+                groupData.append(Group(id: 0, title: "You have no groups", avatar: nil))
+            }
+            
+            DispatchQueue.main.async {
+                self.setTableData(data: groupData)
+                self.tableView.reloadData()
+            }
+        }
         
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
          view.addGestureRecognizer(tapGesture)

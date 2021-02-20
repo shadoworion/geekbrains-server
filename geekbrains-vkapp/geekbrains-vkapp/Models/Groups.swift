@@ -13,7 +13,7 @@ protocol Groups {
     
     var title: String { get set }
     
-    var avatar: UIImage? { get set }
+    var avatar: URL? { get set }
 }
 
 class Group: Groups {
@@ -21,15 +21,11 @@ class Group: Groups {
     
     var title: String
     
-    var avatar: UIImage?
+    var avatar: URL?
     
-    init(id: Int, title: String, avatar: UIImage?) {
+    init(id: Int, title: String, avatar: URL?) {
         self.id = id
         self.title = title
-        self.avatar = avatar
-    }
-    
-    func updateAvatar(avatar: UIImage){
         self.avatar = avatar
     }
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D1172E825E01C7D00A5F012 /* VKPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1172E725E01C7D00A5F012 /* VKPosts.swift */; };
+		8D1172EB25E11E8000A5F012 /* VKFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1172EA25E11E8000A5F012 /* VKFriends.swift */; };
+		8D1172F125E1500F00A5F012 /* VKGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1172F025E1500F00A5F012 /* VKGroups.swift */; };
 		8D8CA4FB25CDD75200F28A8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8CA4FA25CDD75200F28A8E /* AppDelegate.swift */; };
 		8D8CA4FD25CDD75200F28A8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8CA4FC25CDD75200F28A8E /* SceneDelegate.swift */; };
 		8D8CA4FF25CDD75200F28A8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8CA4FE25CDD75200F28A8E /* ViewController.swift */; };
@@ -32,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D1172E725E01C7D00A5F012 /* VKPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKPosts.swift; sourceTree = "<group>"; };
+		8D1172EA25E11E8000A5F012 /* VKFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKFriends.swift; sourceTree = "<group>"; };
+		8D1172F025E1500F00A5F012 /* VKGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKGroups.swift; sourceTree = "<group>"; };
 		8D8CA4F725CDD75200F28A8E /* geekbrains-vkapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "geekbrains-vkapp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8CA4FA25CDD75200F28A8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D8CA4FC25CDD75200F28A8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +75,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D1172E625E01C6D00A5F012 /* VKModels */ = {
+			isa = PBXGroup;
+			children = (
+				8D1172E725E01C7D00A5F012 /* VKPosts.swift */,
+				8D1172EA25E11E8000A5F012 /* VKFriends.swift */,
+				8D1172F025E1500F00A5F012 /* VKGroups.swift */,
+			);
+			path = VKModels;
+			sourceTree = "<group>";
+		};
 		8D8CA4EE25CDD75200F28A8E = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +104,7 @@
 		8D8CA4F925CDD75200F28A8E /* geekbrains-vkapp */ = {
 			isa = PBXGroup;
 			children = (
+				8D1172E625E01C6D00A5F012 /* VKModels */,
 				8DED03A325CF05CC00173690 /* News */,
 				8DED039525CEFF8900173690 /* Groups */,
 				8DED038725CEEB3A00173690 /* Friends */,
@@ -223,7 +240,10 @@
 				8DED039B25CF00CE00173690 /* UserGroupCell.swift in Sources */,
 				8DED038925CEEBAA00173690 /* FriendsController.swift in Sources */,
 				8DEFA0A025CF308D00315AB7 /* VKLoginController.swift in Sources */,
+				8D1172F125E1500F00A5F012 /* VKGroups.swift in Sources */,
+				8D1172EB25E11E8000A5F012 /* VKFriends.swift in Sources */,
 				8DED039E25CF017500173690 /* AllGroupCell.swift in Sources */,
+				8D1172E825E01C7D00A5F012 /* VKPosts.swift in Sources */,
 				8D8CA4FB25CDD75200F28A8E /* AppDelegate.swift in Sources */,
 				8DED037A25CEE77D00173690 /* SessionSingletone.swift in Sources */,
 				8DED038D25CEFC0700173690 /* FriendCell.swift in Sources */,

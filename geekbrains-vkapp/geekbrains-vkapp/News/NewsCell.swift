@@ -15,27 +15,33 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var likeCountLabel: UILabel!
     @IBOutlet weak var commentButton: UIButton!
     
+    private var postId: Int = 0
+    private var canLike: Bool = false
     
-    func setData(title: String, poster: UIImage?, likes: Int){
+    func setData(post_id: Int, title: String, poster: URL?, likes: Int, isLiked: Bool){
+        postId = post_id
+        canLike = !isLiked
         newsTitleLabel.text = title
         if poster == nil {
             newsPosterImage.image = UIImage(systemName: "moon.stars")
         } else {
-            newsPosterImage.image = poster
+            newsPosterImage.load(url: poster!)
         }
         likeCountLabel.text = String(likes)
 
-        likes > 0 ? buttonLikedState(state: true) : buttonLikedState(state: false)
+        isLiked ? buttonLikedState(state: true) : buttonLikedState(state: false)
     }
     
     
     @IBAction func likeNews(_ sender: Any) {
-        if likeCountLabel.text != "0" {
+        if canLike == false {
             likeAction(likeState: false)
             buttonLikedState(state: false)
+            canLike = true
         } else {
             likeAction(likeState: true)
             buttonLikedState(state: true)
+            canLike = false
         }
     }
     
@@ -51,7 +57,7 @@ class NewsCell: UITableViewCell {
     }
     
     func likeAction(likeState: Bool){
-        let index = newsData.firstIndex(where: {$0.title == newsTitleLabel.text})
+        let index = newsData.firstIndex(where: {$0.id == postId})
         likeState ? newsData[index!].likePost() : newsData[index!].dissLikePost()
         likeCountLabel.text = String(newsData[index!].likes)
     }

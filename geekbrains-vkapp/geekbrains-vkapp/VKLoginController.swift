@@ -29,7 +29,7 @@ class VKLoginController: UIViewController, WKUIDelegate, WKNavigationDelegate {
                     URLQueryItem(name: "display", value: "mobile"),
                     URLQueryItem(name: "scope", value: "friends,photos,wall,groups"),
                     URLQueryItem(name: "response_type", value: "token"),
-                    URLQueryItem(name: "v", value: "5.126")
+                    URLQueryItem(name: "v", value: "5.130")
                 ]
                 
         if let requestUrl = urlComponents.url {
@@ -83,6 +83,11 @@ class VKLoginController: UIViewController, WKUIDelegate, WKNavigationDelegate {
             let session = UserSession.shared
             session.token = token
             session.userId = userId
+            
+            newsData.removeAll()
+            friendsData.removeAll()
+            groupData.removeAll()
+            allGroupData.removeAll()
             
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let mainTabBar = storyBoard.instantiateViewController(withIdentifier: "MainTabBar")

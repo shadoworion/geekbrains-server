@@ -12,7 +12,7 @@ protocol Friends {
     
     var fullname: String { get set }
     
-    var avatar: UIImage? { get set }
+    var avatar: URL? { get set }
 }
 
 class Friend: Friends {
@@ -20,23 +20,15 @@ class Friend: Friends {
     
     var fullname: String
     
-    var avatar: UIImage?
+    var avatar: URL?
     
-    var images: [UIImage?]
+    var images: [URL?]
     
-    init(id: Int, fullname: String, avatar: UIImage?) {
+    init(id: Int, fullname: String, avatar: URL?) {
         self.id = id
         self.fullname = fullname
         self.avatar = avatar
         self.images = [nil, nil, nil]
-    }
-    
-    func updateAvatar(avatar: UIImage){
-        self.avatar = avatar
-    }
-    
-    func addImage(image: UIImage?){
-        images.append(image)
     }
 }
 

@@ -44,7 +44,20 @@ class FriendsController: UITableViewController, UISearchBarDelegate {
         searchField.delegate = self
         
         let task = NetworkManager()
-        task.getFriends()
+        task.getFriends { (friends) in
+            if (friends.count > 0) {
+                for friend in friends {
+                    friendsData.append(Friend(id: friend.id, fullname: friend.first_name + " " + friend.last_name, avatar: friend.photo_50))
+                }
+            } else {
+                friendsData.append(Friend(id: 1, fullname: "You have no friends", avatar: nil))
+            }
+            
+            DispatchQueue.main.async {
+                self.setTableData()
+                self.tableView.reloadData()
+            }
+        }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
